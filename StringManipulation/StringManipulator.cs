@@ -8,26 +8,36 @@ namespace StringManipulation
 {
     public static class StringManipulator
     {
+        private static SentenceReverser _sentenceReverser = new SentenceReverser();
         /// <summary>
-        /// Reverses the words order in the passed string.
+        /// Creates a new string with reversed word order from the passed string.
         /// </summary>
         /// <param name="separator">The separator that is used to distinguish one word from another.</param>
-        /// <returns>A deep copy of the passed string with reversed word order.</returns>
-        public static string ReverseSentence(this string sentenceToReverse, char separator = ' ')
+        /// <returns>The created string.</returns>
+        public static string GetReverseSentence(this string sentenceToReverse, char separator = ' ')
         {
-            var reverser = new SentenceReverser();
-            return reverser.ReverseSentence(sentenceToReverse, separator);
+            return _sentenceReverser.ReverseSentence(sentenceToReverse, separator);
         }
 
         /// <summary>
-        /// Reverses the words order in the passed string.
+        /// Creates a new string with reversed word order from the passed char array.
         /// </summary>
         /// <param name="separator">The separator that is used to distinguish one word from another.</param>
-        /// <returns>A deep copy of the passed string with reversed word order.</returns>
-        public static char[] ReverseSentence(this char[] sentenceToReverse, char separator = ' ')
+        /// <returns>The created char array.</returns>
+        public static char[] GetReverseSentence(this char[] sentenceToReverse, char separator = ' ')
         {
-            var reverser = new SentenceReverser();
-            return reverser.ReverseSentence(sentenceToReverse, separator);
+            return _sentenceReverser.ReverseSentence(sentenceToReverse, separator);
+        }
+
+        /// <summary>
+        /// Reverses the word order in the passed char array.
+        /// </summary>
+        /// <param name="separator">The separator that is used to distinguish one word from another.</param>
+        public static void ReverseSentence(this char[] sentenceToReverse, char separator = ' ')
+        {
+            var reversedSentence = _sentenceReverser.ReverseSentence(sentenceToReverse, separator);
+            for (int currentIndex = 0; currentIndex < sentenceToReverse.Length; currentIndex++)
+                sentenceToReverse[currentIndex] = reversedSentence[currentIndex];
         }
     }
 }
