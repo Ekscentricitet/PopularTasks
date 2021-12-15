@@ -1,9 +1,4 @@
 ﻿using StringManipulation.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("UnitTests")]
@@ -42,7 +37,7 @@ namespace StringManipulation
                 }
             }
 
-            ReverseSpecific(copy, lastReversedAt, lastIndex );
+            ReverseSpecific(copy, lastReversedAt, lastIndex);
             ReverseSpecific(copy, 0, lastIndex);
             return copy;
         }
@@ -79,7 +74,7 @@ namespace StringManipulation
         /// <param name="rightIndex">The right index of the part that needs to be reversed.</param>
         private void ReverseSpecific(char[] arrayToReverse, int leftIndex, int rightIndex)
         {
-            while(leftIndex < rightIndex)
+            while (leftIndex < rightIndex)
             {
                 var temp = arrayToReverse[leftIndex];
                 arrayToReverse[leftIndex] = arrayToReverse[rightIndex];

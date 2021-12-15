@@ -12,6 +12,8 @@ So far I have only implemented sentence reversal. You can download the source fi
 
 ## Version history
 
+* **1.0.1**:
+  * Added an extension method to edit the passed char array instead of creating a copy.
 * **1.0.0**: Initial commit:
   * Added sentence reversing logic for strings and character arrays.
   * Created extension methods to utilize the code.

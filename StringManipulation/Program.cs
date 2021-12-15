@@ -11,7 +11,7 @@ while (true)
     {
         try
         {
-        Console.WriteLine(stringToTest.ReverseSentence());
+        Console.WriteLine(stringToTest.GetReverseSentence());
         }
         catch (NullSentenceToReverseException)
         {
